@@ -1,0 +1,73 @@
+@model SmartInventoryManagement.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-info text-white">
+            <h3 class="mb-0">📦 Product Details</h3>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th style="width:30%">Product Name</th>
+                    <td>@Model.ProductName</td>
+                </tr>
+
+                <tr>
+                    <th>Category</th>
+                    <td>
+                        <span class="badge bg-primary">
+                            @Model.Category
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Quality</th>
+                    <td>
+                        <span class="badge bg-success">
+                            @Model.Quality
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Quantity</th>
+                    <td>@Model.Quantity</td>
+                </tr>
+
+                <tr>
+                    <th>Price</th>
+                    <td>₹ @Model.Price</td>
+                </tr>
+
+            </table>
+
+            <div class="mt-4">
+
+                <a asp-action="Edit"
+                   asp-route-id="@Model.Id"
+                   class="btn btn-warning">
+                    ✏ Edit
+                </a>
+
+                <a asp-action="Index"
+                   class="btn btn-secondary ms-2">
+                    ← Back
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Smart Inventory</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SmartInventoryManagement.styles.css" asp-append-version="true" />
+</head>
+
+<body style="background-color:#f4f6f9;">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold"
+               asp-controller="Dashboard"
+               asp-action="Index">
+
+                <i class="bi bi-box-seam"></i>
+                Smart Inventory
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse"
+                 id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Dashboard"
+                           asp-action="Index">
+                            <i class="bi bi-speedometer2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Products"
+                           asp-action="Index">
+                            <i class="bi bi-box"></i>
+                            Products
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Categories"
+                           asp-action="Index">
+                            <i class="bi bi-grid"></i>
+                            Categories
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+    <a class="nav-link text-light"
+       asp-controller="Reports"
+       asp-action="Index">
+        📊 Reports
+    </a>
+</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+
+        @RenderBody()
+
+    </div>
+
+    <footer class="text-center mt-5 p-3 bg-white border-top">
+
+        <strong>Smart Inventory Management System</strong>
+
+        <br />
+
+        © 2026 | Developed by <strong>Akshay Kumar</strong>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>
